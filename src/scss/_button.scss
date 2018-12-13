@@ -11,4 +11,10 @@
 }
 
 
- 
+.button--drx {
+  @extend .button;
+  background: transparent;
+  border: 5px solid $white;
+  text-transform: uppercase;
+  font-weight: bold;
+}

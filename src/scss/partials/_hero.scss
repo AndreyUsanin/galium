@@ -1,4 +1,49 @@
+
 .intro {
+  display: grid;
   max-width: $l;
   margin: 0 auto;
+  grid-template-columns: 1fr 2fr;
+  background: url('../images/doc-hero.jpg') no-repeat top left;
+  background-size: contain;
+
+  @media(max-width: $m) {
+    grid-template-columns: 1fr;
+  }
+
+
+  &__image {
+    max-width: 100%;
+
+  }
+
+  &__doc {
+    max-width: 100%;
+    height: 100%;
+
+
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    @media(max-width: $s) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: .5rem;
+    }
+
+    a {
+      color: $secondary;
+    }
+  }
 }
