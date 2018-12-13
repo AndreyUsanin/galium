@@ -1,0 +1,18 @@
+section.dms-grid
+  .dms
+    .dms__info
+      h1.dms__title Есть полис ДМС?
+      p Выбирайте проверенных врачей, которые входят в вашу программу страхования.
+  .dms__form
+    form.main-form(action='')
+      .main-form__inner
+        .inputbox
+          select.inputbox__select
+            option(value='alpha') Альфастрахование
+            option(value='moscovia') Московия
+        .inputbox
+          input.inputbox__input(placeholder='Фамилия застрохованного', type='text')
+        .inputbox
+          input.inputbox__input(placeholder='Номер телефона', type='tel')
+        .inputbox
+          a.button(href='#') записаться на прием

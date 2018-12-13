@@ -1,0 +1,151 @@
+.doc-slider-wrp {
+  max-width: $xl;
+  margin: 0 auto;
+  padding: 5vw 0;
+
+  @media(max-width: $s) {
+    padding: 0rem 2rem;
+  }
+}
+
+.doc-card-sm {
+  border: 1px solid $light-gray;
+  border-radius: 10px;
+
+  &:hover .doc-card-sm__icon-link {
+    transform: translateX(1rem);
+    transition: all linear 0.3s;
+  }
+
+  &__imgbox {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+
+  &__img {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__overlay {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    background: linear-gradient(to bottom, rgba($white, 0), rgba($black, 0.7));
+  }
+
+  &__name {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    padding: 2rem 2rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      color: $white;
+      font-size: ms(2);
+      font-weight: normal;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__like {
+    align-self: flex-end;
+    font-size: ms(1);
+  }
+
+  &__heart {
+    color: $primary;
+    margin-right: 0.5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 2rem 2rem;
+
+    h3 {
+      padding: 0;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  &__cat {
+    text-transform: uppercase;
+    color: $gray;
+    font-weight: bold;
+  }
+
+  &__icon-link {
+    font-size: ms(2);
+    color: $secondary;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    align-self: flex-end;
+    transition: all linear 0.3s;
+  }
+}
+
+// SLIDER
+
+.doc-slider {
+
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media(max-width: $s) {
+      flex-direction: column;
+    }
+
+    h2 {
+      font-size: ms(4);
+
+      @media(max-width: $s) {
+        font-size: ms(2);
+      }
+    }
+  }
+
+  &__controls {
+
+    
+    @media(max-width: $s) {
+     margin-bottom: 1rem;
+    }
+
+    button {
+      background: none;
+      border: 1px solid $secondary;
+      padding: 1rem 1.6rem;
+      cursor: pointer;
+      outline: none;
+      color: $secondary;
+      font-size: 1.2rem;
+
+      &:hover .doc-slider__icon {
+        color: $aux;
+      }
+    }
+
+    button:first-child {
+      border-right: 0;
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+    }
+
+    button:last-child {
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+  }
+}

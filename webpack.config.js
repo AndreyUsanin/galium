@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require("path");
 const devMode = process.env.NODE_ENV === "development";
+const autoprefixer =  require('autoprefixer')({ grid: true, browsers: ['>1%'] });
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -63,23 +64,52 @@ module.exports = {
           }
         ]
       },
+      // {
+      //   test: /\.(sa|sc|c)ss$/,
+      //   use: [
+      //     devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+      //     "css-loader",
+      //     {
+      //       loader: "postcss-loader",
+      //       options: {
+      //         // ident: "postcss",
+      //         // plugins: [require("precss"), require("autoprefixer")]
+      //       }
+      //     },
+      //     {
+      //       loader: "sass-loader" // compiles Sass to CSS
+      //     }
+      //   ]
+      // },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(scss|css)$/,
         use: [
-          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            // options: {
-            //   ident: "postcss",
-            //   plugins: [require("precss"), require("autoprefixer")]
-            // }
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
+            MiniCssExtractPlugin.loader,
+            {
+                loader: "css-loader",
+                options: {
+                    minimize: {
+                        safe: true
+                    }
+                }
+            },
+            {
+                loader: "postcss-loader",
+                options: {
+                    autoprefixer: {
+                        browsers: ["last 4 versions"]
+                    },
+                    plugins: () => [
+                        autoprefixer
+                    ]
+                },
+            },
+            {
+                loader: "sass-loader",
+                options: {}
+            }
         ]
-      },
+    },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: path.resolve(__dirname, 'src/images/'),
@@ -102,9 +132,8 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Custom template using Handlebars",
-      template: "src/index.pug",
-      filename: "index.html"
+      filename: "index.html",
+      template: "src/index.pug"
       // options: {
       //   handlebarsLoader: {}
       // }

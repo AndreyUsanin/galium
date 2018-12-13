@@ -1,9 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900');
-@import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700');
+// @import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+@import '~modularscale-sass/stylesheets/modularscale';
 
 @import 'reset';
+@import 'typography';
 @import 'vars';
-@import 'slider';
+@import 'button';
+@import 'forms';
+
+//PARTIALS
+@import './partials/hero';
+@import './partials/cards';
+@import './partials/drx-offer';
+@import './partials/doc-card-sm';
+@import './partials/dms';
+@import './partials/map-n-contact';
 
 
 

@@ -1,0 +1,35 @@
+input {
+  border: 1px solid $gray;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.inputbox {
+  display: flex;
+  margin-bottom: 2rem;
+
+  &__input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid $gray;
+
+    &:focus,
+    &:active {
+      border: 1px solid $dark-gray;
+    }
+  }
+
+  &__select {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid $gray;
+
+    &:focus,
+    &:active {
+      border: 1px solid $dark-gray;
+    }
+  }
+}

@@ -1,13 +1,13 @@
 // COLORS
 
-$primary: #00dffc;
-$secondary: #005f6b;
-$aux: #f48809;
+$primary: #E40814;
+$secondary: #4B88A2;
+$aux: #75C6E8;
 $white: #ffffff;
-$black: #0f0f0f;
-$gray: #c4c4c4;
-$light-gray: #e8e9e9;
-$dark-gray: #2a333c;
+$black: #252627;
+$gray: #9B9C9C;
+$light-gray: #EBEBEB;
+$dark-gray: #606161;
 
 // BREAKPOINTS
 
@@ -20,7 +20,7 @@ $xs: 480px;
 // BODY
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   color: $black;
   line-height: 1.6;
 }
