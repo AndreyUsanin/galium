@@ -1,0 +1,94 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 3vw;
+}
+
+th {
+  background-color: #eee;
+  font-weight: bold;
+  border: 0.125em solid #333;
+  line-height: 1.5;
+  padding: 0.75em;
+  text-align: left;
+}
+
+td {
+  border: 0.125em solid #333;
+  line-height: 1.5;
+  padding: 0.75em;
+  text-align: left;
+}
+
+/* Stack rows vertically on small screens */
+@media (max-width: 30em) {
+  /* Hide column labels */
+  thead tr {
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+  }
+  tr {
+    border: 0.125em solid #333;
+    border-bottom: 0;
+    + tr {
+      margin-top: 1.5em;
+    }
+    display: block;
+  }
+  /* Leave a space between table rows */
+  /* Get table cells to act like rows */
+  td {
+    display: block;
+    border: none;
+    border-bottom: 0.125em solid #333;
+    /* Leave a space for data labels */
+    padding-left: 50%;
+    &:before {
+      content: attr(data-label);
+      display: inline-block;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-left: -100%;
+      width: 100%;
+    }
+  }
+  /* Add data labels */
+}
+
+/* Stack labels vertically on smaller screens */
+@media (max-width: 20em) {
+  td {
+    padding-left: 0.75em;
+    &:before {
+      display: block;
+      margin-bottom: 0.75em;
+      margin-left: 0;
+    }
+  }
+}
+
+
+.price__list {
+  margin: 0;
+  margin-top: 3vw;
+  padding: 0;
+  list-style: none;
+}
+
+.price__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem;
+
+  &:nth-child(2n) {
+    background: $light-gray;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: ms(2);
+    padding-left: .5rem;
+  }
+}

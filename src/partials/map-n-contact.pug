@@ -1,7 +1,8 @@
 .footer-grid
 
   section.footer__content
-    section.map-n-contact-grid
+
+    section.contact-grid
       section.contacts
         h3.contacts__title Контакты:
         ul.contacts__list
@@ -14,6 +15,8 @@
           li.contacts__item
             span.contacts__icon.fas.fa-envelope
             |  galium@inbox.ru
+   
+      section.contacts      
           h3.contacts__title Рабочие часы: 
           li.contacts__item.contacts__item--schedule
             span Пн-Пт
@@ -23,9 +26,25 @@
             |  8.00 - 15.00
           li.contacts__item.contacts__item--schedule
             span Воскресенье
-            |  выходной
-      section.map            
-        script(type='text/javascript', charset='utf-8', async='', src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3925c26b17a74138c2e82bcba4e9da16ed98ccdd8aae7edcd03de9e364f4c112&width=100%25&height=100%&lang=ru_RU&scroll=false')
+            |  выходной      
+   
 
+      section.contacts      
+        h3.contacts__title «Галиум в соцсетях»
+        ul.soc
+          li.soc__item
+            a(href="#" class="soc__link")
+              .soc__icon.fab.fa-vk
+          li.soc__item
+            a(href="#" class="soc__link")
+              .soc__icon.fab.fa-instagram
+
+    .subfooter
+      .subfooter__inner 
+        span.subfooter__item © 2009-2019 МОЦ «Галиум»           
+        span.subfooter__item
+          a(href="#" class="subfooter__link") Контролирующие организации и лицензии         
+        span.subfooter__item
+          a(href="#" class="subfooter__link") Соглашение об обработке персональных данных         
 
   .footer

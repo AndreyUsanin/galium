@@ -1,0 +1,38 @@
+extends ./layouts/default
+
+block title
+  title УЗИ
+
+block header
+  include ./partials/nav
+
+block content
+  include ./partials/doc 
+
+  section.nota
+    span.nota__inner
+      span.fas.fa-info.nota__icon
+      p Проводит ведение беременности, диагностику и лечение гинекологических заболеваний, радиохирургическое лечение эрозии шейки матки, установку и удаление ВМС, кольпоскопию, УЗИ омт, беременности 1,2,3 триместр, УЗИ щитовидной железы, молочной железы ,узи органов брюшной полости, почек.
+
+
+  section.price-area
+
+    ul.tabs__nav
+      li     
+        h2.price__title Цены УЗИ
+      li
+        a.tabs__link.is-active(href='#tab_1')
+          h3 УЗИ взрослым
+      li
+        a.tabs__link(href='#tab_2')
+          h3 УЗИ детям
+    .tabs__content
+      #tab_1.tabs__item.is-visible
+        include ./tables/uzi-adult
+      #tab_2.tabs__item
+        include ./tables/uzi-adult
+          
+
+
+
+  include ./partials/map-n-contact          

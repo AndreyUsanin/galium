@@ -2,11 +2,28 @@ section.nav
   div.logo
     img(src="./images/logo--dark.svg" class="logo")
   ul.contacts-nav
-    li
+    li.contacts-nav__adress
       span.contacts-nav__icon.fas.fa-map-marker-alt
-      | Интернациональная, 27б
-    li 
+      .contacts-nav__info
+        a(href="https://yandex.ru/maps/-/CBFhjPbFwA" class="contacts-nav__link" target="_blank")
+          | Интернациональная 27б
+        a(href="#" class="tt-button") режим работы  
+
+    li.contacts-nav__phone 
       span.contacts-nav__icon.fas.fa-phone-square
-      a(href='tel: 722257') 72-22-57
+      a(href='tel: 722257' class="contacts-nav__link") 72-22-57
 
 
+
+  div.tt-content
+      ul.tt-content__list
+        h3.tt-content__title Рабочие часы: 
+        li
+          span Пн-Пт
+          |  8.00 - 20.00
+        li
+          span Суббота
+          |  8.00 - 15.00
+        li
+          span Воскресенье
+          |  выходной

@@ -1,0 +1,198 @@
+
+ .doc-area {
+  max-width: $l;
+  margin: 0 auto;
+  padding: 2vw;
+ }
+
+
+
+.doc {
+  display: flex;
+  border: 1px solid $light-gray;
+  border-radius: 10px;
+
+
+
+  &__imgbox {
+    flex: 1 0 auto;
+
+    @media(max-width: $s) {
+      display: none;
+    }
+  
+  } 
+
+  &__image{
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__inner {
+    width: 100%;
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: ms(2);
+
+    @media(max-width: $s) {
+      flex-direction: column;
+      font-size: ms(1);
+    }
+  
+  }
+
+  &__name {
+   margin: 0;
+   padding: 0;
+
+  }
+
+  &__cat {
+    font-size: ms(0);
+    color: $gray;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__priem {
+    color: $gray;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+
+    span {
+      background: $primary;
+      color: $white;
+      padding: .5rem;
+    }
+
+    @media(max-width: $s) {
+      flex-direction: column;
+      font-size: ms(1);
+      margin: 1rem 0;
+    }
+  }
+
+
+
+  &__content {
+    display: flex;
+
+    @media(max-width: $s) {
+      display: none;
+    }
+  }
+
+
+  &__perk {
+    margin-right: 2rem;
+    
+
+    span {
+      margin-right: .5rem;
+    }
+
+    @media(max-width: $m) {
+      display: none;
+    }
+  }
+
+  &__appointment {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: ms(0);    
+
+    
+    @media(max-width: $s) {
+     flex-direction: column;
+    }
+  
+  }
+
+  &__button {
+    margin-right: 2rem;
+    display: flex;
+    white-space: nowrap;
+
+    @media(max-width: $s) {
+      padding: 1rem 0;
+     }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+  }
+
+  &__phone-number {
+
+    display: flex;
+    padding: 1rem 2rem;
+    align-items: center;
+    background: $light-gray;
+
+    a {
+      color: $black;
+      font-weight: bold;
+      text-decoration: none;
+      margin-left: .5rem;
+      white-space: nowrap;
+    }
+  }
+
+ 
+  &__tlink {
+    color: $secondary;
+    font-weight: bold;
+  }
+
+
+  &__icon {
+    font-size: ms(2);
+    color: $primary;
+  }
+}
+
+
+
+.controls {
+
+  margin-right: 2rem;
+  display: flex;
+  text-align: center;
+  
+  &__imgbox {
+    margin-bottom: 1rem;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.5;
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+.controls__imgbox.tns-nav-active {
+  opacity: 1;
+}
+
+@media(max-width: $m) {
+
+}
+

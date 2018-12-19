@@ -1,11 +1,11 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  max-width: $l;
-  width: 100%;
-  padding: 1rem 0;
-  margin: 0 auto;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
   border-bottom: 1px solid $light-gray;
+  background: $light-gray;
 }
 
 
@@ -16,17 +16,34 @@
   margin: 0;
   font-size: ms(1);
   font-weight: bold;
-
+  align-items: baseline;
+  
+  
+@media(max-width: $s){
+  font-size: ms(0);
+}
   &__icon {
     color: $primary;
-    margin-right: 1rem;
+    margin-right: .5rem;
   }
 
-  li:first-child {
-    margin-right: 4rem;
+  &__adress {
+    margin-right: 2rem;
+    display: flex;
+    align-items: baseline;
   }
 
-  a {
+  &__phone {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__info {
+    flex-direction: column;
+    display: flex;
+  }
+
+  &__link {
     color: $black;
     text-decoration: none;
   }
@@ -36,4 +53,69 @@
 .logo {
   width: 160px;
   height: auto;
+}
+
+
+@media(max-width: $s) {
+  .logo {
+    order: 2;
+    margin-top: 1rem;
+  }
+  .contacts-nav {
+    order: 1;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+
+}
+
+
+// temp
+
+.tt-button {
+  font-size: ms(0);
+  font-weight: normal;
+  color: $secondary;
+  text-decoration: underline;
+}
+
+.tt-content {
+  text-align: left;
+  padding: 1rem .5rem;
+
+  &__title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: .5rem 0;
+
+      span {
+        margin-right: .5rem;
+      }
+    }
+  }
+}
+
+.tippy-tooltip.light-theme {
+  border-radius: 0 !important;
+}
+
+.tippy-tooltip.light-theme .tippy-backdrop  {
+  background: $black;
+
+}
+
+.tippy-content {
+  background: transparent;
 }

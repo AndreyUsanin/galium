@@ -1,0 +1,21 @@
+.nota {
+  max-width: $l;
+  margin: 0 auto;
+  padding: 2vw 0;
+
+  &__inner {
+    background: $light-gray;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  &__icon {
+    font-size: 3rem;
+    margin-right: 2rem;
+    color: $white;
+  }
+}
+
+

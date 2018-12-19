@@ -1,13 +1,16 @@
-.map-n-contact-grid {
-  max-width: $xl;
+
+
+.contact-grid {
+  max-width: $l;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr;  
-  padding: 6vw;
+  grid-gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr;  
+  background: $black;
+  padding: 2vw;
 
-  @media(max-width: $m) {
+  @media(max-width: $s) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
   }
 }
 
@@ -15,7 +18,6 @@
 
   background: $black;
   color: $white;
-  padding: 2rem 4rem 4rem 4rem;
 
   &__list {
     list-style: none;
@@ -30,10 +32,6 @@
     &--schedule {
       display: flex;
       justify-content: space-between;
-
-      &:last-child {
-        border-bottom: 0;
-      }
     }
   }
 
@@ -55,16 +53,19 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
-  min-height: 80vh;
+  min-height: 50vh;
 }
 
 .footer {
   background: $light-gray;
-  clip-path:  polygon(0 0, 100%  calc(100% - 20vw), 100% 100%, 0 100%);
+  clip-path:  polygon(0 0, 100%  calc(100% - 10vw), 100% 100%, 0 100%);
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  min-height: 80vh;
   z-index: -1;
+
+  @media(max-width: $m) {
+    background: none;
+  }
 }
 
 
@@ -72,4 +73,52 @@
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   
+}
+
+
+.soc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: .5rem;
+  display: flex;
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    background: $light-gray;
+    color: $black;
+    padding: 1rem;
+    margin-right: 1rem;
+    // border: 1px solid $secondary;
+    border-radius: 100%;
+  }
+}
+
+
+.subfooter {
+  max-width: $l;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media(max-width: $s) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    margin: 0 1rem;
+    text-align: center;
+  }
+
+  &__link {
+    color: $black;
+    text-decoration: none;
+  }
+
 }
