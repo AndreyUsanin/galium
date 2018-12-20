@@ -33,12 +33,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-analizi:before {
+
+.icon-expirience:before {
   content: "\e900";
 }
-.icon-health-care:before {
+.icon-kids-doctor:before {
   content: "\e901";
 }
-.icon-uzi:before {
+.icon-analizi:before {
   content: "\e902";
+}
+.icon-galium-cross:before {
+  content: "\e903";
+}
+.icon-health-care:before {
+  content: "\e904";
+}
+.icon-medical-massage:before {
+  content: "\e905";
+}
+.icon-ruble:before {
+  content: "\e906";
+}
+.icon-spine2:before {
+  content: "\e907";
+}
+.icon-uzi:before {
+  content: "\e908";
 }

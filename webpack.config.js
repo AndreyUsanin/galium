@@ -5,7 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require("path");
 const devMode = process.env.NODE_ENV === "development";
-const autoprefixer =  require('autoprefixer')({ grid: true, browsers: ['>1%'] });
+const autoprefixer =  require('autoprefixer')({ grid: true, browsers: ['>2%'] });
+
+
+
 
 const PATHS = {
   src: path.join(__dirname, './src'),

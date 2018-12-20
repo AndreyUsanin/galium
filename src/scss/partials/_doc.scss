@@ -1,176 +1,14 @@
-
- .doc-area {
+.doc-area {
   max-width: $l;
   margin: 0 auto;
   padding: 2vw;
- }
-
-
-
-.doc {
-  display: flex;
-  border: 1px solid $light-gray;
-  border-radius: 10px;
-
-
-
-  &__imgbox {
-    flex: 1 0 auto;
-
-    @media(max-width: $s) {
-      display: none;
-    }
-  
-  } 
-
-  &__image{
-    max-width: 100%;
-    height: auto;
-  }
-
-  &__inner {
-    width: 100%;
-    padding: 2.5rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    font-size: ms(2);
-
-    @media(max-width: $s) {
-      flex-direction: column;
-      font-size: ms(1);
-    }
-  
-  }
-
-  &__name {
-   margin: 0;
-   padding: 0;
-
-  }
-
-  &__cat {
-    font-size: ms(0);
-    color: $gray;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  &__priem {
-    color: $gray;
-    padding: 0;
-    margin: 0;
-    white-space: nowrap;
-
-    span {
-      background: $primary;
-      color: $white;
-      padding: .5rem;
-    }
-
-    @media(max-width: $s) {
-      flex-direction: column;
-      font-size: ms(1);
-      margin: 1rem 0;
-    }
-  }
-
-
-
-  &__content {
-    display: flex;
-
-    @media(max-width: $s) {
-      display: none;
-    }
-  }
-
-
-  &__perk {
-    margin-right: 2rem;
-    
-
-    span {
-      margin-right: .5rem;
-    }
-
-    @media(max-width: $m) {
-      display: none;
-    }
-  }
-
-  &__appointment {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    font-size: ms(0);    
-
-    
-    @media(max-width: $s) {
-     flex-direction: column;
-    }
-  
-  }
-
-  &__button {
-    margin-right: 2rem;
-    display: flex;
-    white-space: nowrap;
-
-    @media(max-width: $s) {
-      padding: 1rem 0;
-     }
-  }
-
-  &__phone {
-    display: flex;
-    align-items: center;
-  }
-
-  &__phone-number {
-
-    display: flex;
-    padding: 1rem 2rem;
-    align-items: center;
-    background: $light-gray;
-
-    a {
-      color: $black;
-      font-weight: bold;
-      text-decoration: none;
-      margin-left: .5rem;
-      white-space: nowrap;
-    }
-  }
-
- 
-  &__tlink {
-    color: $secondary;
-    font-weight: bold;
-  }
-
-
-  &__icon {
-    font-size: ms(2);
-    color: $primary;
-  }
 }
 
-
-
 .controls {
-
   margin-right: 2rem;
   display: flex;
   text-align: center;
-  
+
   &__imgbox {
     margin-bottom: 1rem;
     outline: none;
@@ -187,12 +25,194 @@
   }
 }
 
-
 .controls__imgbox.tns-nav-active {
   opacity: 1;
 }
 
-@media(max-width: $m) {
-
+@media (max-width: $m) {
 }
 
+// GRID
+
+.doctor {
+  border: 1px solid $light-gray;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+
+    @media (max-width: $s) {
+      grid-template-columns: 1fr 1fr;
+
+    }
+
+    @media (max-width: $xs) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 200px 200px auto auto auto;
+    }
+  }
+
+  &__imgbox {
+    grid-row: span 4;
+
+
+    &--belousova {
+      background: url("../images/kozlova.jpg") top center no-repeat;
+      background-size: cover;
+    }
+
+    &--lushpanova {
+      background: url("../images/lushpanova.jpg") top center no-repeat;
+      background-size: cover;
+    }
+
+    @media (max-width: $xs) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+  }
+
+  
+  &__overlay {
+    display: none;
+
+
+    @media (max-width: $xs) {
+     display: block;
+     grid-column: 1 / 2;
+     grid-row: 1 / -1;
+     background: linear-gradient(to bottom, rgba($white, 0), rgba($black, 0.6));
+    }
+  }
+
+  &__maininfo {
+    padding: 2rem;
+    grid-row: span 1;
+
+    @media (max-width: $xs) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      padding: 2rem;
+      align-self: end;
+    }
+  }
+
+
+  &__name {
+    font-size: ms(3);
+    margin-bottom: 1rem;
+
+    @media (max-width: $s) {
+      font-size: ms(1);
+    }
+
+    @media (max-width: $xs) {
+      color: $white;
+    }
+  }
+
+ 
+
+  &__cat {
+    font-size: ms(0);
+    color: $gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+    @media (max-width: $xs) {
+      color: $white;
+      font-weight: normal;
+      font-size: ms(0);
+    }
+  }
+
+  &__priem {
+    padding: 2rem;
+    // grid-row: 2 / 3;
+
+    span {
+    text-transform: uppercase;
+    background: $light-gray;
+    padding: 1rem;
+    font-weight: bold;
+    }
+
+    @media (max-width: $xs) {
+      color: $black;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      padding: 2rem;
+    }
+  }
+
+
+
+  &__perks {
+    padding: 2rem;
+    display: flex;
+
+    @media (max-width: $s) {
+      flex-direction: column;
+    }
+
+    @media (max-width: $xs) {
+      color: $black;
+      // grid-column: 1 / 2;
+      // grid-row: 7 / 8;
+      padding: 2rem;
+      justify-content: center;
+      flex-direction: row;
+    }
+  }
+
+  &__perk {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__iconbox {
+    border: 1px solid $black;
+    border-radius: 50%;
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    padding: .5rem;
+    margin: .5rem;
+  }
+
+  &__appoint {
+    display: flex;
+    align-self: end;
+    // grid-row: 5 / 6;
+
+    @media (max-width: $s) {
+      flex-direction: column;
+    }
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+      grid-row: 6 / 7;
+    }
+  }
+
+  &__button {
+    background: $primary;
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    height: 50px;
+  }
+
+  &__phone {
+    background: $light-gray;
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+  }
+}
